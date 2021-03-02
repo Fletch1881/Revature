@@ -1,9 +1,10 @@
 package Week1;
 
+
 public class loopAssignment {
 
 	public static void main(String[] args) {
-		// 1) Try all the loops by yourself with some use case of your own
+		// 1) Try all the loops by yourself with some use case of your own		
 		myLoops();
 	}
 
