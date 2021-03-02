@@ -4,12 +4,12 @@ public class palindromeAssingment {
 
 	public static void main(String[] args) {
 		// 2) Print all the palindrome numbers between 100 and 999
-		palindromes();
+		palindromes(100, 999);
 
 	}
 	
-	public static void palindromes() {
-		for(int i = 100; i <= 999; i++) {
+	public static void palindromes(int num1, int num2) {
+		for(int i = num1; i <= num2; i++) {
 			int temp = 0, reverse = 0, newI = i;
 			while(newI>0) {
 				temp = newI%10;
