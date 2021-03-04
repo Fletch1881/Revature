@@ -25,9 +25,9 @@ public class palindromeArray {
 		for(int i = 0; i < n.length; i++) {
 			int temp = 0, reverse = 0, newI = n[i];
 			while(newI>0) {
-				temp = newI%10;
-				reverse = reverse * 10 + temp;
-				newI = newI/10;
+				temp = newI % 10;	
+				reverse = reverse * 10 + temp; 
+				newI = newI / 10; 
 			}
 			if(n[i] == reverse) {
 				System.out.println(n[i]+" is a palindrome");
