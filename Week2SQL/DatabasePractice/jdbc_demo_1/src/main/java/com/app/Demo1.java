@@ -20,7 +20,7 @@ public class Demo1 {
 			// Step 2 Open connection to DB
 			String url = "jdbc:postgresql://localhost:5432/postgres";
 			String username = "postgres";
-			String password = "[redacted]"; //password for Postgres // password is K******#** for me
+			String password = "[redacted]"; //password for Postgres // password is K********* for me
 		
 			connection = DriverManager.getConnection(url, username, password);
 			System.out.println("Connection Successful");
