@@ -1,0 +1,12 @@
+package com.app;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		
+		// Step 1 Load the driver
+		Class.forName("org.postgresql.Driver");
+
+	}
+
+}

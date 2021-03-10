@@ -1,0 +1,65 @@
+package com.app;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		
+		
+		Connection connection = null;
+		try {
+			// Step 1 Load the driver
+			Class.forName("org.postgresql.Driver");
+			System.out.println("Driver loaded Successfully");
+			
+			// Step 2 Open connection to DB
+			String url = "jdbc:postgresql://localhost:5432/postgres";
+			String username = "postgres";
+			String password = "Kinsler#10"; //password for Postgres 
+		
+			connection = DriverManager.getConnection(url, username, password);
+			System.out.println("Connection Successful");
+			
+			// Step 3 - create statement
+			Statement statement = connection.createStatement();
+			String sql = "select id, name, age, city, gender from player_schema.player";
+			
+			// Step 4 - execute query
+			ResultSet resultSet = statement.executeQuery(sql);
+			System.out.println("Query Executed");
+			
+			// Step 5 - process the results
+			while(resultSet.next()) {
+				System.out.print(" ID: "+resultSet.getInt("id"));
+				System.out.print(" Name: "+resultSet.getString("name"));
+				System.out.print(" City: "+resultSet.getString("city"));
+				System.out.print(" Gender: "+resultSet.getString("gender"));
+				System.out.println(" Age: "+resultSet.getInt("age"));
+			}
+			
+			System.out.println("Results porcessed succefully");
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);
+		}
+		catch(SQLException e) {
+			System.out.println(e);
+		}finally {
+			try {
+				//Step 6 release connection
+				connection.close();
+				System.out.println("Connection closed");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				System.out.println(e);
+			}
+		}
+
+	}
+
+}

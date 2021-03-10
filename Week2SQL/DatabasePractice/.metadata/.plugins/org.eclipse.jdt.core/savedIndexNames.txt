@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\JavaRevature\DatabasePractice\.metadata\.plugins\org.eclipse.jdt.core
+4113726307.index
+4094709684.index
